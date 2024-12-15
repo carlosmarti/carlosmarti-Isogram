@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Isogram {
     /**
@@ -13,6 +16,12 @@ public class Isogram {
      * @return true if str is an isogram, false otherwise.
      */
     public boolean isIsogram(String str){
+
+        Set<Character> strSet = str.chars().mapToObj(e -> (char)e).collect(Collectors.toSet());
+        
+        if(strSet.size() == str.length())
+            return true;
+        
         return false;
     }
 }
